@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPORTONIC Fitness Le Creusot - Votre salle de sport indépendante</title>
+    <meta name="description" content="SPORTONIC Fitness Le Creusot - Salle de sport indépendante avec cours collectifs, coaching personnalisé et ambiance conviviale. 12 Rue Anatole France, 71200 Le Creusot">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%);
+        }
+        .accent-gradient {
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+        }
+        .text-accent {
+            color: #ff6b35;
+        }
+        .border-accent {
+            border-color: #ff6b35;
+        }
+        .bg-accent {
+            background-color: #ff6b35;
+        }
+        .hover-accent:hover {
+            background-color: #e55a2b;
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(255, 107, 53, 0.2);
+        }
+        .hero-overlay {
+            background: linear-gradient(to right, rgba(26, 26, 46, 0.95) 0%, rgba(26, 26, 46, 0.7) 50%, rgba(26, 26, 46, 0.4) 100%);
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            margin: 16px auto 0;
+            border-radius: 2px;
+        }
+        .pulse-btn {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.4); }
+            50% { box-shadow: 0 0 0 15px rgba(255, 107, 53, 0); }
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #ff6b35;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .testimonial-card {
+            background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+        }
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        @keyframes floating {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-transparent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <a href="#accueil" class="flex items-center space-x-2">
+                    <div class="w-12 h-12 accent-gradient rounded-full flex items-center justify-center">
+                        <i class="fas fa-dumbbell text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="text-2xl font-bold text-white">SPORTONIC</span>
+                        <span class="block text-xs text-gray-300 -mt-1">Fitness Le Creusot</span>
+                    </div>
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="#accueil" class="nav-link text-white hover:text-orange-400 transition font-medium">Accueil</a>
+                    <a href="#apropos" class="nav-link text-white hover:text-orange-400 transition font-medium">À propos</a>
+                    <a href="#cours" class="nav-link text-white hover:text-orange-400 transition font-medium">Cours</a>
+                    <a href="#equipements" class="nav-link text-white hover:text-orange-400 transition font-medium">Équipements</a>
+                    <a href="#horaires" class="nav-link text-white hover:text-orange-400 transition font-medium">Horaires</a>
+                    <a href="#avis" class="nav-link text-white hover:text-orange-400 transition font-medium">Avis</a>
+                    <a href="#tarifs" class="nav-link text-white hover:text-orange-400 transition font-medium">Tarifs</a>
+                    <a href="#contact" class="bg-accent hover-accent text-white px-6 py-2 rounded-full font-semibold transition pulse-btn">Essai gratuit</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden text-white text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-gray-900/95 backdrop-blur-lg">
+            <div class="px-4 py-6 space-y-4">
+                <a href="#accueil" class="block text-white hover:text-orange-400 py-2 font-medium">Accueil</a>
+                <a href="#apropos" class="block text-white hover:text-orange-400 py-2 font-medium">À propos</a>
+                <a href="#cours" class="block text-white hover:text-orange-400 py-2 font-medium">Cours</a>
+                <a href="#equipements" class="block text-white hover:text-orange-400 py-2 font-medium">Équipements</a>
+                <a href="#horaires" class="block text-white hover:text-orange-400 py-2 font-medium">Horaires</a>
+                <a href="#avis" class="block text-white hover:text-orange-400 py-2 font-medium">Avis</a>
+                <a href="#tarifs" class="block text-white hover:text-orange-400 py-2 font-medium">Tarifs</a>
+                <a href="#contact" class="block bg-accent text-white text-center py-3 rounded-full font-semibold">Essai gratuit</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="relative min-h-screen flex items-center gradient-bg overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=1920" alt="Salle de sport" class="w-full h-full object-cover opacity-30">
+            <div class="hero-overlay absolute inset-0"></div>
+        </div>
+        
+        <!-- Decorative Elements -->
+        <div class="absolute top-20 right-10 w-64 h-64 bg-orange-500/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-20 left-10 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl"></div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
+                    <i class="fas fa-star text-orange-400 mr-2"></i>
+                    <span class="text-white text-sm">Salle indépendante depuis + de 20 ans</span>
+                </div>
+                
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+                    Bien plus qu'une salle de sport,<br>
+                    <span class="text-accent">une communauté</span>
+                </h1>
+                
+                <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+                    Rejoignez la dernière salle de sport indépendante du Creusot. 
+                    Coaching humain, cours collectifs variés et accompagnement personnalisé 
+                    dans une ambiance conviviale et motivante.
+                </p>
+                
+                <div class="flex flex-wrap gap-4 mb-12">
+                    <a href="#cours" class="accent-gradient text-white px-8 py-4 rounded-full font-semibold text-lg hover:opacity-90 transition flex items-center">
+                        <i class="fas fa-play-circle mr-2"></i>
+                        Découvrir les cours
+                    </a>
+                    <a href="#contact" class="bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/20 transition border border-white/20">
+                        Nous contacter
+                    </a>
+                </div>
+                
+                <!-- Features -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-12 h-12 bg-orange-500/20 rounded-full flex items-center justify-center">
+                            <i class="fas fa-heart text-orange-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-white font-semibold">Coaching humain</p>
+                            <p class="text-gray-400 text-sm">Personnalisé</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-12 h-12 bg-orange-500/20 rounded-full flex items-center justify-center">
+                            <i class="fas fa-users text-orange-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-white font-semibold">Cours collectifs</p>
+                            <p class="text-gray-400 text-sm">Variés & motivants</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-12 h-12 bg-orange-500/20 rounded-full flex items-center justify-center">
+                            <i class="fas fa-home text-orange-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-white font-semibold">100% indépendant</p>
+                            <p class="text-gray-400 text-sm">Local & authentique</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 floating">
+            <a href="#apropos" class="text-white/50 hover:text-white transition">
+                <i class="fas fa-chevron-down text-2xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- À propos Section -->
+    <section id="apropos" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <div class="relative z-10">
+                        <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800" alt="Coach Sportonic" class="rounded-2xl shadow-2xl w-full">
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 w-48 h-48 accent-gradient rounded-2xl opacity-20"></div>
+                    <div class="absolute -top-6 -left-6 w-32 h-32 bg-gray-200 rounded-2xl"></div>
+                    
+                    <!-- Coach Card -->
+                    <div class="absolute -bottom-8 -left-4 bg-white rounded-xl shadow-xl p-4 z-20">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-14 h-14 accent-gradient rounded-full flex items-center justify-center text-white font-bold text-xl">AG</div>
+                            <div>
+                                <p class="font-bold text-gray-800">Ascension Garcia</p>
+                                <p class="text-sm text-gray-500">Gérante & Coach principale</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h2 class="text-4xl font-bold text-gray-800 mb-6 section-title text-left">
+                        Notre histoire
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                        <strong class="text-accent">SPORTONIC Fitness</strong> est la dernière salle de sport indépendante du Creusot. 
+                        Loin des grandes chaînes low-cost, nous cultivons une approche humaine et personnalisée 
+                        du fitness depuis plus de 20 ans.
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Sous la direction d'<strong>Ascension Garcia</strong>, notre équipe vous accompagne 
+                        avec passion et bienveillance dans votre parcours sportif. Que vous soyez débutant 
+                        ou sportif confirmé, vous trouverez chez nous un espace chaleureux où progresser 
+                        à votre rythme.
+                    </p>
+                    
+                    <!-- Values -->
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="bg-gray-50 rounded-xl p-4 card-hover">
+                            <div class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center mb-3">
+                                <i class="fas fa-handshake text-accent"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-800">Proximité</h4>
+                            <p class="text-sm text-gray-500">Une équipe à votre écoute</p>
+                        </div>
+                        <div class="bg-gray-50 rounded-xl p-4 card-hover">
+                            <div class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center mb-3">
+                                <i class="fas fa-heart text-accent"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-800">Bienveillance</h4>
+                            <p class="text-sm text-gray-500">Respect de chacun</p>
+                        </div>
+                        <div class="bg-gray-50 rounded-xl p-4 card-hover">
+                            <div class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center mb-3">
+                                <i class="fas fa-fire text-accent"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-800">Motivation</h4>
+                            <p class="text-sm text-gray-500">Énergie positive</p>
+                        </div>
+                        <div class="bg-gray-50 rounded-xl p-4 card-hover">
+                            <div class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center mb-3">
+                                <i class="fas fa-universal-access text-accent"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-800">Accessibilité</h4>
+                            <p class="text-sm text-gray-500">Pour tous les niveaux</p>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="inline-flex items-center text-accent font-semibold hover:underline">
+                        Venez nous rencontrer <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cours Section -->
+    <section id="cours" class="py-24 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4 section-title">Cours & Activités</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Des cours collectifs motivants, un espace fitness complet et des programmes adaptés à chacun
+                </p>
+            </div>
+            
+            <!-- Cours Collectifs -->
+            <div class="mb-16">
+                <div class="flex items-center mb-8">
+                    <div class="w-14 h-14 accent-gradient rounded-xl flex items-center justify-center mr-4">
+                        <i class="fas fa-users text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800">Cours Collectifs</h3>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-white rounded-2xl p-6 card-hover shadow-lg">
+                        <div class="w-16 h-16 bg-red-100 rounded-2xl flex items-center justify-center mb-4">
+                            <i class="fas fa-bolt text-red-500 text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-800 mb-2">Full Body</h4>
+                        <p class="text-gray-600">Travail complet du corps pour tonifier et renforcer l'ensemble de votre silhouette.</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-6 card-hover shadow-lg">
+                        <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-4">
+                            <i class="fas fa-dumbbell text-blue-500 text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-800 mb-2">Renforcement</h4>
+                        <p class="text-gray-600">Sculptez votre corps et développez votre force musculaire en douceur.</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-6 card-hover shadow-lg">
+                        <div class="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mb-4">
+                            <i class="fas fa-heart-pulse text-orange-500 text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-800 mb-2">Cardio Training</h4>
+                        <p class="text-gray-600">Séances dynamiques pour améliorer votre endurance et brûler des calories.</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-6 card-hover shadow-lg">
+                        <div class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mb-4">
+                            <i class="fas fa-bicycle text-purple-500 text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-800 mb-2">Spinning</h4>
+                        <p class="text-gray-600">Cours de vélo intense en musique pour un maximum de motivation.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Cours Doux -->
+            <div class="mb-16">
+                <div class="flex items-center mb-8">
+                    <div class="w-14 h-14 bg-teal-500 rounded-xl flex items-center justify-center mr-4">
+                        <i class="fas fa-spa text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800">Cours Doux</h3>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-2xl p-6 card-hover shadow-lg border-l-4 border-teal-400">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-yin-yang text-teal-500 text-2xl mr-3"></i>
+                            <h4 class="text-xl font-bold text-gray-800">Yoga</h4>
+                        </div>
+                        <p class="text-gray-600">Harmonie du corps et de l'esprit, postures et respiration.</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-6 card-hover shadow-lg border-l-4 border-pink-400">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-child text-pink-500 text-2xl mr-3"></i>
+                            <h4 class="text-xl font-bold text-gray-800">Pilates</h4>
+                        </div>
+                        <p class="text-gray-600">Renforcement profond, posture et gainage en douceur.</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-6 card-hover shadow-lg border-l-4 border-indigo-400">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-moon text-indigo-500 text-2xl mr-3"></i>
+                            <h4 class="text-xl font-bold text-gray-800">Relaxation</h4>
+                        </div>
+                        <p class="text-gray-600">Détente, stretching et récupération pour votre bien-être.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- APA -->
+            <div class="mb-16">
+                <div class="bg-gradient-to-r from-green-50 to-teal-50 rounded-3xl p-8 lg:p-12">
+                    <div class="grid lg:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <div class="inline-flex items-center bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                                <i class="fas fa-leaf mr-2"></i> Activité Physique Adaptée
+                            </div>
+                            <h3 class="text-3xl font-bold text-gray-800 mb-4">APA - Sport Santé</h3>
+                            <p class="text-gray-600 mb-6 leading-relaxed">
+                                Des programmes spécialement conçus pour accompagner chacun selon ses besoins, 
+                                encadrés par des professionnels formés et bienveillants.
+                            </p>
+                            <ul class="space-y-3">
+                                <li class="flex items-center text-gray-700">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    <span><strong>Seniors :</strong> maintien de la forme et de l'autonomie</span>
+                                </li>
+                                <li class="flex items-center text-gray-700">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    <span><strong>Pathologies :</strong> exercices adaptés et sécurisés</span>
+                                </li>
+                                <li class="flex items-center text-gray-700">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    <span><strong>Reprise :</strong> retour à l'activité en douceur</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600" alt="Activité adaptée" class="rounded-2xl shadow-xl">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Accès Libre -->
+            <div>
+                <div class="flex items-center mb-8">
+                    <div class="w-14 h-14 bg-gray-800 rounded-xl flex items-center justify-center mr-4">
+                        <i class="fas fa-key text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800">Accès Libre</h3>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-white rounded-2xl p-8 card-hover shadow-lg flex items-start space-x-4">
+                        <div class="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-running text-gray-700 text-2xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-gray-800 mb-2">Cardio-Training</h4>
+                            <p class="text-gray-600">Tapis de course, vélos, rameurs, elliptiques... Entraînez-vous librement à votre rythme.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-8 card-hover shadow-lg flex items-start space-x-4">
+                        <div class="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-dumbbell text-gray-700 text-2xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-gray-800 mb-2">Musculation</h4>
+                            <p class="text-gray-600">Machines guidées et charges libres pour développer votre force et votre masse musculaire.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Équipements Section -->
+    <section id="equipements" class="py-24 gradient-bg relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-orange-500/5 rounded-full blur-3xl"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white mb-4 section-title">Équipements & Services</h2>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+                    Un espace complet et moderne pour atteindre tous vos objectifs
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 card-hover">
+                    <div class="w-16 h-16 accent-gradient rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-heartbeat text-white text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Espace Cardio</h4>
+                    <ul class="text-gray-300 space-y-2">
+                        <li><i class="fas fa-check text-orange-400 mr-2"></i>Tapis de course</li>
+                        <li><i class="fas fa-check text-orange-400 mr-2"></i>Vélos elliptiques</li>
+                        <li><i class="fas fa-check text-orange-400 mr-2"></i>Rameurs</li>
+                        <li><i class="fas fa-check text-orange-400 mr-2"></i>Vélos d'appartement</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 card-hover">
+                    <div class="w-16 h-16 accent-gradient rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-dumbbell text-white text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Espace Musculation</h4>
+                    <ul class="text-gray-300 space-y-2">
+                        <li><i class="fas fa-check text-orange-400 mr-2"></i>Machines guidées</li>
+                        <li><i class="fas fa-check text-orange-400 mr-2"></i>Charges libres</li>
+                        <li><i class="fas fa-check text-orange-400 mr-2"></i>Haltères & barres</li>
+                        <li><i class="fas fa-check text-orange-400 mr-2"></i>Bancs réglables</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 card-hover">
+                    <div class="w-16 h-16 accent-gradient rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-user-tie text-white text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Coaching Personnalisé</h4>
+                    <ul class="text-gray-300 space-y-2">
+                        <li><i class="fas fa-check text-orange-400 mr-2"></i>Bilan initial</li>
+                        <li><i class="fas fa-check text-orange-400 mr-2"></i>Programme sur mesure</li>
+                        <li><i class="fas fa-check text-orange-400 mr-2"></i>Suivi régulier</li>
+                        <li><i class="fas fa-check text-orange-400 mr-2"></i>Conseils nutrition</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 card-hover">
+                    <div class="w-16 h-16 accent-gradient rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-shower text-white text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Vestiaires</h4>
+                    <ul class="text-gray-300 space-y-2">
+                        <li><i class="fas fa-check text-orange-400 mr-2"></i>Douches</li>
+                        <li><i class="fas fa-check text-orange-400 mr-2"></i>Casiers sécurisés</li>
+                        <li><i class="fas fa-check text-orange-400 mr-2"></i>Espace détente</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 card-hover">
+                    <div class="w-16 h-16 accent-gradient rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-car text-white text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Commodités</h4>
+                    <ul class="text-gray-300 space-y-2">
+                        <li><i class="fas fa-check text-orange-400 mr-2"></i>Parking gratuit</li>
+                        <li><i class="fas fa-check text-orange-400 mr-2"></i>Accès facile</li>
+                        <li><i class="fas fa-check text-orange-400 mr-2"></i>Climatisation</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 card-hover">
+                    <div class="w-16 h-16 accent-gradient rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-wheelchair text-white text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Accessibilité PMR</h4>
+                    <ul class="text-gray-300 space-y-2">
+                        <li><i class="fas fa-check text-orange-400 mr-2"></i>Accès adapté</li>
+                        <li><i class="fas fa-check text-orange-400 mr-2"></i>Équipements accessibles</li>
+                        <li><i class="fas fa-check text-orange-400 mr-2"></i>Accompagnement dédié</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <p class="text-gray-400 text-sm italic">
+                    <i class="fas fa-info-circle mr-2"></i>
+                    Certains services sont à confirmer directement auprès du club
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Horaires Section -->
+    <section id="horaires" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4 section-title">Horaires d'ouverture</h2>
+                <p class="text-xl text-gray-600">Entraînez-vous quand vous le souhaitez</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-gradient-to-r from-orange-500 to-orange-600 rounded-3xl p-8 lg:p-12 text-white text-center mb-8 shadow-2xl">
+                    <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-clock text-4xl"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold mb-4">Espace Cardio-Training</h3>
+                    <p class="text-5xl font-bold mb-2">7j/7</p>
+                    <p class="text-2xl font-semibold mb-4">de 6h00 à 21h00</p>
+                    <p class="text-white/80">Accès libre à l'espace cardio et musculation</p>
+                </div>
+                
+                <div class="bg-gray-100 rounded-2xl p-8 text-center">
+                    <div class="flex items-center justify-center mb-4">
+                        <i class="fas fa-calendar-alt text-accent text-2xl mr-3"></i>
+                        <h4 class="text-xl font-bold text-gray-800">Planning des cours collectifs</h4>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        Les horaires des cours collectifs sont disponibles à l'accueil de la salle 
+                        ou sur simple demande par téléphone.
+                    </p>
+                    <a href="#contact" class="inline-flex items-center bg-accent text-white px-6 py-3 rounded-full font-semibold hover-accent transition">
+                        <i class="fas fa-phone mr-2"></i>
+                        Nous contacter
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Avis Section -->
+    <section id="avis" class="py-24 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4 section-title">Ce que disent nos membres</h2>
+                <div class="flex items-center justify-center space-x-2 mt-6">
+                    <div class="flex">
+                        <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                        <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                        <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                        <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                        <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                    </div>
+                    <span class="text-2xl font-bold text-gray-800 ml-2">5/5</span>
+                    <span class="text-gray-500">- Avis clients</span>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="testimonial-card rounded-2xl p-8 shadow-lg card-hover">
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">
+                        "Une <strong>ambiance conviviale</strong> et chaleureuse ! Ascension est une coach exceptionnelle, 
+                        toujours à l'écoute et motivante. Je recommande vivement cette salle."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center text-accent font-bold">MP</div>
+                        <div class="ml-3">
+                            <p class="font-semibold text-gray-800">Marie P.</p>
+                            <p class="text-sm text-gray-500">Membre depuis 3 ans</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card rounded-2xl p-8 shadow-lg card-hover">
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">
+                        "Parfait pour les <strong>débutants</strong> ! J'avais peur de me sentir jugé, mais ici 
+                        tout le monde est bienveillant. Les cours collectifs sont top et la <strong>motivation</strong> est au rendez-vous !"
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-500 font-bold">LD</div>
+                        <div class="ml-3">
+                            <p class="font-semibold text-gray-800">Laurent D.</p>
+                            <p class="text-sm text-gray-500">Membre depuis 1 an</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card rounded-2xl p-8 shadow-lg card-hover">
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">
+                        "La <strong>coach est vraiment à l'écoute</strong>. Après une période difficile, 
+                        j'ai pu reprendre le sport en douceur grâce à l'accompagnement personnalisé. Merci SPORTONIC !"
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-500 font-bold">SB</div>
+                        <div class="ml-3">
+                            <p class="font-semibold text-gray-800">Sophie B.</p>
+                            <p class="text-sm text-gray-500">Membre depuis 2 ans</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card rounded-2xl p-8 shadow-lg card-hover">
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">
+                        "À 65 ans, je cherchais une salle qui s'<strong>adapte à mon niveau</strong>. 
+                        Ici, pas de jugement, juste de l'encouragement. Les cours APA sont parfaits !"
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center text-purple-500 font-bold">JM</div>
+                        <div class="ml-3">
+                            <p class="font-semibold text-gray-800">Jacqueline M.</p>
+                            <p class="text-sm text-gray-500">Membre depuis 4 ans</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card rounded-2xl p-8 shadow-lg card-hover">
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">
+                        "Les cours de spinning sont géniaux ! L'<strong>énergie du groupe</strong> et l'ambiance musicale 
+                        font qu'on se dépasse sans s'en rendre compte. Vivement le prochain cours !"
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center text-red-500 font-bold">TC</div>
+                        <div class="ml-3">
+                            <p class="font-semibold text-gray-800">Thomas C.</p>
+                            <p class="text-sm text-gray-500">Membre depuis 6 mois</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card rounded-2xl p-8 shadow-lg card-hover">
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">
+                        "Enfin une salle à <strong>taille humaine</strong> où on connait tout le monde ! 
+                        Loin des usines à fitness, ici on se sent vraiment chez soi. Bravo à toute l'équipe !"
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center text-teal-500 font-bold">NR</div>
+                        <div class="ml-3">
+                            <p class="font-semibold text-gray-800">Nicolas R.</p>
+                            <p class="text-sm text-gray-500">Membre depuis 5 ans</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Engagement Local Section -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4 section-title">Notre engagement local</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    SPORTONIC s'engage auprès de la communauté du Creusot à travers des actions solidaires et santé
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center card-hover">
+                    <div class="relative inline-block mb-6">
+                        <div class="w-32 h-32 bg-pink-100 rounded-full flex items-center justify-center mx-auto">
+                            <i class="fas fa-ribbon text-pink-500 text-5xl"></i>
+                        </div>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-3">Octobre Rose</h4>
+                    <p class="text-gray-600">Participation active à la sensibilisation au cancer du sein avec des événements sportifs solidaires.</p>
+                </div>
+                
+                <div class="text-center card-hover">
+                    <div class="relative inline-block mb-6">
+                        <div class="w-32 h-32 bg-green-100 rounded-full flex items-center justify-center mx-auto">
+                            <i class="fas fa-shoe-prints text-green-500 text-5xl"></i>
+                        </div>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-3">Marches solidaires</h4>
+                    <p class="text-gray-600">Organisation et participation aux marches et courses solidaires du territoire.</p>
+                </div>
+                
+                <div class="text-center card-hover">
+                    <div class="relative inline-block mb-6">
+                        <div class="w-32 h-32 bg-blue-100 rounded-full flex items-center justify-center mx-auto">
+                            <i class="fas fa-hand-holding-heart text-blue-500 text-5xl"></i>
+                        </div>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-3">Événements santé</h4>
+                    <p class="text-gray-600">Partenariats avec les acteurs locaux de santé pour promouvoir l'activité physique.</p>
+                </div>
+            </div>
+            
+            <!-- Gallery -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
+                <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400" alt="Sport collectif" class="rounded-xl h-48 w-full object-cover hover:opacity-80 transition">
+                <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=400" alt="Cours fitness" class="rounded-xl h-48 w-full object-cover hover:opacity-80 transition">
+                <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400" alt="Entraînement" class="rounded-xl h-48 w-full object-cover hover:opacity-80 transition">
+                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400" alt="Communauté" class="rounded-xl h-48 w-full object-cover hover:opacity-80 transition">
+            </div>
+        </div>
+    </section>
+
+    <!-- Tarifs Section -->
+    <section id="tarifs" class="py-24 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4 section-title">Nos formules</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Des tarifs adaptés à tous les profils et tous les budgets
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-8 mb-12">
+                    <div class="bg-white rounded-3xl p-8 shadow-xl card-hover border-t-4 border-accent">
+                        <div class="text-center mb-6">
+                            <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-user text-accent text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800">Formule Individuelle</h3>
+                            <p class="text-gray-500">Pour votre entraînement personnel</p>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center text-gray-600">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                Accès cardio & musculation
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                Cours collectifs inclus
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                Coaching personnalisé
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                Vestiaires & douches
+                            </li>
+                        </ul>
+                        <a href="#contact" class="block text-center bg-accent text-white py-3 rounded-full font-semibold hover-accent transition">
+                            Demander les tarifs
+                        </a>
+                    </div>
+                    
+                    <div class="bg-white rounded-3xl p-8 shadow-xl card-hover border-t-4 border-blue-500">
+                        <div class="text-center mb-6">
+                            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-user-friends text-blue-500 text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800">Formule Duo / Couple</h3>
+                            <p class="text-gray-500">Partagez votre motivation</p>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center text-gray-600">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                Accès cardio & musculation
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                Cours collectifs inclus
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                Tarif préférentiel
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                Vestiaires & douches
+                            </li>
+                        </ul>
+                        <a href="#contact" class="block text-center bg-blue-500 text-white py-3 rounded-full font-semibold hover:bg-blue-600 transition">
+                            Demander les tarifs
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- PASS'SPORT -->
+                <div class="bg-gradient-to-r from-green-500 to-teal-500 rounded-3xl p-8 text-white text-center">
+                    <div class="flex items-center justify-center mb-4">
+                        <i class="fas fa-ticket-alt text-3xl mr-3"></i>
+                        <h3 class="text-2xl font-bold">PASS'SPORT accepté</h3>
+                    </div>
+                    <p class="text-white/90 mb-4">
+                        Bénéficiez de l'aide de 50€ pour l'inscription de vos enfants (6-17 ans) ou jeunes adultes (jusqu'à 30 ans sous conditions).
+                    </p>
+                    <a href="#contact" class="inline-flex items-center bg-white text-green-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition">
+                        <i class="fas fa-info-circle mr-2"></i>
+                        En savoir plus
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 gradient-bg relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full opacity-10">
+            <div class="absolute top-20 left-20 w-64 h-64 bg-orange-500 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 right-20 w-96 h-96 bg-orange-500 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white mb-4 section-title">Contactez-nous</h2>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+                    Venez nous rencontrer ou contactez-nous pour un essai gratuit !
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div>
+                    <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/10 mb-8">
+                        <h3 class="text-2xl font-bold text-white mb-6">Nos coordonnées</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 accent-gradient rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt text-white"></i>
+                                </div>
+                                <div>
+                                    <p class="text-white font-semibold">Adresse</p>
+                                    <p class="text-gray-300">12 Rue Anatole France<br>71200 Le Creusot</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 accent-gradient rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-phone text-white"></i>
+                                </div>
+                                <div>
+                                    <p class="text-white font-semibold">Téléphone fixe</p>
+                                    <a href="tel:0385559607" class="text-gray-300 hover:text-orange-400 transition text-lg">03 85 55 96 07</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 accent-gradient rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-mobile-alt text-white"></i>
+                                </div>
+                                <div>
+                                    <p class="text-white font-semibold">Mobile</p>
+                                    <a href="tel:0673651976" class="text-gray-300 hover:text-orange-400 transition text-lg">06 73 65 19 76</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- CTA Buttons -->
+                        <div class="mt-8 space-y-4">
+                            <a href="tel:0385559607" class="flex items-center justify-center bg-accent text-white py-4 rounded-full font-semibold hover-accent transition w-full">
+                                <i class="fas fa-phone mr-2"></i>
+                                Appeler maintenant
+                            </a>
+                            <a href="https://www.facebook.com" target="_blank" class="flex items-center justify-center bg-blue-600 text-white py-4 rounded-full font-semibold hover:bg-blue-700 transition w-full">
+                                <i class="fab fa-facebook mr-2"></i>
+                                Suivez-nous sur Facebook
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Hours reminder -->
+                    <div class="bg-orange-500/20 border border-orange-500/30 rounded-2xl p-6">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-clock text-orange-400 text-xl mr-3"></i>
+                            <h4 class="text-white font-semibold">Rappel des horaires</h4>
+                        </div>
+                        <p class="text-gray-300">
+                            <strong>Cardio-training :</strong> 7j/7 de 6h à 21h<br>
+                            <span class="text-sm">Cours collectifs : horaires à l'accueil</span>
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Map -->
+                <div>
+                    <div class="bg-white rounded-3xl overflow-hidden shadow-2xl h-full min-h-[400px]">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2719.8893!2d4.4247!3d46.8061!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f26c8d8e4e5a4d%3A0x3c5c5e5e5e5e5e5e!2s12%20Rue%20Anatole%20France%2C%2071200%20Le%20Creusot!5e0!3m2!1sfr!2sfr!4v1234567890"
+                            width="100%" 
+                            height="100%" 
+                            style="border:0; min-height: 400px;" 
+                            allowfullscreen="" 
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="py-16 bg-accent">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">
+                Prêt à rejoindre la communauté SPORTONIC ?
+            </h2>
+            <p class="text-xl text-white/90 mb-8">
+                Venez découvrir notre salle et profitez d'un essai gratuit !
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="tel:0673651976" class="bg-white text-accent px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition flex items-center">
+                    <i class="fas fa-phone mr-2"></i>
+                    Réserver mon essai
+                </a>
+                <a href="#accueil" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/10 transition">
+                    Retour en haut
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 accent-gradient rounded-full flex items-center justify-center">
+                            <i class="fas fa-dumbbell text-white"></i>
+                        </div>
+                        <div>
+                            <span class="text-xl font-bold text-white">SPORTONIC</span>
+                            <span class="block text-xs text-gray-400">Fitness Le Creusot</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Votre salle de sport indépendante au Creusot.<br>
+                        Bien plus qu'une salle, une communauté.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com" target="_blank" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-blue-600 transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com" target="_blank" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-pink-600 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Navigation</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#accueil" class="text-gray-400 hover:text-white transition">Accueil</a></li>
+                        <li><a href="#apropos" class="text-gray-400 hover:text-white transition">À propos</a></li>
+                        <li><a href="#cours" class="text-gray-400 hover:text-white transition">Cours</a></li>
+                        <li><a href="#equipements" class="text-gray-400 hover:text-white transition">Équipements</a></li>
+                        <li><a href="#tarifs" class="text-gray-400 hover:text-white transition">Tarifs</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-2 text-accent"></i>
+                            12 Rue Anatole France, 71200 Le Creusot
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-2 text-accent"></i>
+                            <a href="tel:0385559607" class="hover:text-white transition">03 85 55 96 07</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-mobile-alt mr-2 text-accent"></i>
+                            <a href="tel:0673651976" class="hover:text-white transition">06 73 65 19 76</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-gray-500 text-sm">
+                    © 2024 SPORTONIC Fitness Le Creusot. Tous droits réservés.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (mobileMenu.classList.contains('hidden')) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            }
+        });
+        
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenuBtn.querySelector('i').classList.remove('fa-times');
+                mobileMenuBtn.querySelector('i').classList.add('fa-bars');
+            });
+        });
+        
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('bg-gray-900/95', 'backdrop-blur-lg', 'shadow-lg');
+                navbar.classList.remove('bg-transparent');
+            } else {
+                navbar.classList.remove('bg-gray-900/95', 'backdrop-blur-lg', 'shadow-lg');
+                navbar.classList.add('bg-transparent');
+            }
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all cards
+        document.querySelectorAll('.card-hover').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'all 0.6s ease-out';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
